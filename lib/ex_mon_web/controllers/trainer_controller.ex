@@ -4,12 +4,12 @@ defmodule ExMonWeb.TrainersController do
     def create(conn, params) do
         params
         |> ExMon.create_trainer()
-        |> handle_reponse(conn)
+        |> handle_response(conn)
     end
 
     defp handle_response({:ok, trainer}, conn) do
         conn
-        |> put_status(:ok)
+        |> put_status(:created)
         |> render("create.json", trainer: trainer) #Passa para a view o trainer
     end
 end
