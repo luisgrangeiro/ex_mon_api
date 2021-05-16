@@ -6,7 +6,7 @@ defmodule ExMonWeb.TrainersController do
     def create(conn, params) do
         params
         |> ExMon.create_trainer()
-        |> handle_response(conn, "create.json", :create)
+        |> handle_response(conn, "create.json", :created)
     end
 
     def delete(conn, %{"id" => id}) do
@@ -35,5 +35,5 @@ defmodule ExMonWeb.TrainersController do
         |> render(view, trainer: trainer) #Passa para a view o trainer
     end
 
-    defp handle_response({:error, _changeset}  = error, _conn), do: error
+    defp handle_response({:error, _changeset}  = error, _conn, _view, _status), do: error
 end
