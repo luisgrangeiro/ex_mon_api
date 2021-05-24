@@ -1,5 +1,5 @@
 defmodule ExMon.Pokemon.Get do
-    alias ExMon.Pokemon.Client
+    alias ExMon.PokeApi.Client
     alias ExMon.Pokemon
 
     def call(name) do

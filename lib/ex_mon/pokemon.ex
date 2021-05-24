@@ -10,7 +10,7 @@ defmodule ExMon.Pokemon do
             id: id,
             name: name,
             weight: weight,
-            types: types
+            types: parse_types(types)
         }
     end
 
