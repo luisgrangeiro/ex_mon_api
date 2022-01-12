@@ -7,8 +7,12 @@ defmodule ExMon do
   defdelegate fetch_trainer(params), to: Trainer.Get, as: :call
   defdelegate update_trainer(params), to: Trainer.Update, as: :call
 
+  @spec fetch_pokemon(any) ::
+          {:error, <<_::144>>}
+          | {:ok, %ExMon.Pokemon{id: any, name: any, types: list, weight: any}}
   defdelegate fetch_pokemon(params), to: Pokemon.Get, as: :call
 
   defdelegate create_trainer_pokemon(params), to: TrainerPokemon.Create, as: :call
   defdelegate delete_trainer_pokemon(params), to: TrainerPokemon.Delete, as: :call
+  defdelegate fetch_trainer_pokemon(params), to: TrainerPokemon.Get, as: :call
 end
